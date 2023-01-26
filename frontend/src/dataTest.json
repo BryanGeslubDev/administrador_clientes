@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "first_name": "Bryan",
+    "last_name": "Aranda",
+    "age": 27,
+    "address": "Paine, Santiago."
+  },
+  {
+    "id": 2,
+    "first_name": "Segunda persona",
+    "last_name": "Segundo apellido",
+    "age": "21",
+    "address": "Paine, Santiago."
+  },
+  {
+    "id": 3,
+    "first_name": "Tercera persona",
+    "last_name": "Tercer apellido",
+    "age": "22",
+    "address": "Paine, Santiago."
+  },
+  {
+    "id": 4,
+    "first_name": "Cuarta persona",
+    "last_name": "Cuarto apellido",
+    "age": "23",
+    "address": "Paine, Santiago."
+  },
+  {
+    "id": 5,
+    "first_name": "Quinta persona",
+    "last_name": "Quinto apellido",
+    "age": "24",
+    "address": "Paine, Santiago."
+  },
+  {
+    "id": 5,
+    "first_name": "Sexta persona",
+    "last_name": "Sexto apellido",
+    "age": "25",
+    "address": "Paine, Santiago."
+  }
+]
