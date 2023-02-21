@@ -1,45 +1,35 @@
-import { Column, DataType, Model, Table } from 'sequelize-typescript';
+import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
-@Table({
-  tableName: 'Clients',
-  timestamps: true,
-})
-export class Clients extends Model {
+@Table
+export class Clients extends Model<Clients> {
   @Column({
     type: DataType.UUID,
-    primaryKey: true,
     defaultValue: DataType.UUIDV4,
-    unique: true,
-    allowNull: false,
-    comment: 'id de cliente',
+    primaryKey: true,
   })
-  id: number;
+  id: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    comment: 'nombre de cliente',
   })
   firstName: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    comment: 'apellido de cliente',
   })
   lastName: string;
 
   @Column({
-    type: DataType.STRING,
+    type: DataType.INTEGER,
     allowNull: false,
-    comment: 'edad de cliente',
   })
-  age: string;
+  age: number;
 
   @Column({
     type: DataType.STRING,
     allowNull: false,
-    comment: 'direccion de cliente',
   })
   address: string;
 }
