@@ -1,37 +1,50 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Clients } from '../client.entity';
+import { ClientDto } from '../dto/create-client.dto';
 
 @Injectable()
 export class ClientsService {
   constructor(
     @InjectModel(Clients)
-    private ClientsModel: typeof Clients,
+    private clientModel: typeof Clients,
   ) {}
 
-  findAll() {
-    return this.ClientsModel.findAll();
+  async findAll(): Promise<Clients[]> {
+    return this.clientModel.findAll();
   }
 
-  findOne(id: number) {
-    return this.ClientsModel.findByPk(id);
-  }
-
-  async create(body: any) {
-    const newClient = await this.ClientsModel.create(body);
-    return this.ClientsModel.findByPk(newClient.id);
-  }
-
-  update(id: Clients['id']) {
-    return this.ClientsModel.findByPk(id);
-  }
-
-  async delete(id: number) {
-    await this.ClientsModel.destroy({
+  async findOne(id: string): Promise<Clients> {
+    return this.clientModel.findOne({
       where: {
         id,
       },
     });
-    return true;
+  }
+
+  async create(createClientDto: ClientDto): Promise<Clients> {
+    return this.clientModel.create(createClientDto);
+  }
+
+  async update(id: string, updateClientDto: ClientDto): Promise<Clients> {
+    await this.clientModel.update(updateClientDto, {
+      where: {
+        id,
+      },
+    });
+
+    return this.clientModel.findOne({
+      where: {
+        id,
+      },
+    });
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.clientModel.destroy({
+      where: {
+        id,
+      },
+    });
   }
 }
