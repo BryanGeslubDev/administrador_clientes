@@ -10,7 +10,7 @@ export const getAllClients = async () => {
     const response = await fetch(API_URL, options);
     const data = await response.json();
 
-    return data.data;
+    return data;
   } catch (e) {
     console.log('error', e);
   }
