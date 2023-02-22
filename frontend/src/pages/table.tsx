@@ -61,7 +61,7 @@ const SortableTable = ({data}: {data: ShowClients[]}) => {
           </button>
         </div>
 
-        <div id="table">
+        <table id="table">
           <thead>
             <tr>
               <th>ID</th>
@@ -99,7 +99,7 @@ const SortableTable = ({data}: {data: ShowClients[]}) => {
               );
             })}
           </tbody>
-        </div>
+        </table>
       </div>
 
       <Modal isOpen={Boolean(editModal)} onClose={() => setEditModal(false)}>
