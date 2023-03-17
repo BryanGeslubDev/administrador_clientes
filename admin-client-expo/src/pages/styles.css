@@ -1,0 +1,78 @@
+th,
+td {
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 17px;
+  color: black;
+  border: 1px solid black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 10px;
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: space-around;
+}
+.buttons {
+  height: 60px;
+  width: 230px;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttonEdit {
+  width: 110px;
+  height: 40px;
+  border-radius: 10%;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(125, 247, 161);
+}
+.buttonDelete {
+  width: 110px;
+  height: 40px;
+  border-radius: 10%;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(252, 37, 37);
+}
+
+.addButton {
+  background-color: rgb(107, 176, 255);
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+  align-content: flex-end;
+  width: 110px;
+  height: 40px;
+  border-radius: 5%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.headerButtons {
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  margin: 30px 0;
+}
+
+.title {
+  flex: 1;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
