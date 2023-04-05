@@ -1,31 +1,22 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import SortableTable from "./src/pages/table";
-import { useState, useEffect } from "react";
-import { getAllClients } from "./src/api/api";
+import { ThemeProvider } from "@rneui/themed";
+import { NavigationContainer } from "@react-navigation/native";
+import { RealmContext } from "./src/db";
+import SessionStack from "./src/navigations/sessionStack";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import theme from "./src/utils/theme";
 
 export default function App() {
-  const [data, setData] = useState([]);
+  const { RealmProvider } = RealmContext;
 
-  const getClients = async () => {
-    const response = await getAllClients();
-    setData(response);
-  };
-  useEffect(() => {
-    getClients();
-  }, []);
   return (
-    <>
-      <SortableTable data={data} />
-    </>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider theme={theme}>
+        <RealmProvider>
+          <NavigationContainer>
+            <SessionStack />
+          </NavigationContainer>
+        </RealmProvider>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

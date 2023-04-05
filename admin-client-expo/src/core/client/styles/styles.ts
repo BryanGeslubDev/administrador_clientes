@@ -2,14 +2,13 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   formRegister: {
-    width: 400,
+    flex: 1,
     backgroundColor: "#24303c",
     padding: 30,
-    margin: "auto",
     marginTop: 100,
     borderRadius: 4,
-    fontFamily: "calibri",
-    color: "white",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   text: {
@@ -19,7 +18,7 @@ export const styles = StyleSheet.create({
   },
 
   controls: {
-    width: "100%",
+    width: "80%",
     backgroundColor: "white",
     padding: 10,
     borderRadius: 4,
@@ -31,12 +30,15 @@ export const styles = StyleSheet.create({
   },
 
   buttonForm: {
-    width: "100%",
+    width: "80%",
     backgroundColor: "#1f53c5",
     borderWidth: 0,
     padding: 12,
     color: "white",
     marginVertical: 16,
     fontSize: 16,
+    borderRadius: 4,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

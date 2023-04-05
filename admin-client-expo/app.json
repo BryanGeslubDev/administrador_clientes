@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "admin-client-expo",
-    "slug": "admin-client-expo",
+    "name": "",
+    "slug": "ClientsExpo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,20 +11,29 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.anonymous.ClientsExpo",
+      "permissions": ["android.permission.NFC"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": ["react-native-nfc-manager"],
+    "extra": {
+      "eas": {
+        "projectId": "4aea9aa0-1adb-435f-9d92-852db4bf51f3"
+      }
     }
   }
 }
