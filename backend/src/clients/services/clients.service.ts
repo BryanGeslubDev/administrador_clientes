@@ -22,8 +22,30 @@ export class ClientsService {
     });
   }
 
-  async create(createClientDto: ClientDto): Promise<Clients> {
-    return this.clientModel.create(createClientDto);
+  async create(createClientsDto: ClientDto[]): Promise<Clients[]> {
+    const createdClients: Clients[] = [];
+
+    for (const client of createClientsDto) {
+      const id = client.id;
+      const existingClient = await this.clientModel.findOne({
+        where: {
+          id,
+        },
+      });
+
+      if (existingClient) {
+        await this.clientModel.update(client, {
+          where: {
+            id,
+          },
+        });
+      } else {
+        const createdClient = await this.clientModel.create(client);
+        createdClients.push(createdClient);
+      }
+    }
+
+    return createdClients;
   }
 
   async update(id: string, updateClientDto: ClientDto): Promise<Clients> {

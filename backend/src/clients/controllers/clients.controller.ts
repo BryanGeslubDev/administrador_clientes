@@ -26,8 +26,8 @@ export class ClientsController {
   }
 
   @Post()
-  async create(@Body() createClientDto: ClientDto): Promise<Clients> {
-    return this.clientsService.create(createClientDto);
+  async create(@Body() createClientsDto: ClientDto[]): Promise<Clients[]> {
+    return this.clientsService.create(createClientsDto);
   }
 
   @Put(':id')
